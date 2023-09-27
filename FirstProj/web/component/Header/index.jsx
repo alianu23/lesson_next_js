@@ -2,13 +2,25 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between">
-      <h1 className="flex-1">MetaBlog</h1>
-      <div className="flex flex-1">
-        <h4>Home</h4>
-        <h4>Blog</h4>
-        <h4>Contact</h4>
-        <input type="text" />
+    <div className=" container mx-auto mt-4">
+      <div className="flex items-center justify-between">
+        <a href="/" className="flex items-center">
+          <img src="/Union.png" alt="" className="w-9 h-9 mr-1" />
+          <h1 className="flex-1">
+            Meta
+            <span className="font-semibold">Blog</span>
+          </h1>
+        </a>
+        <div className="flex gap-12  font-light">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <input
+          type="text"
+          placeholder="Search"
+          className="p-2 bg-[#F4F4F5] rounded-md"
+        />
       </div>
     </div>
   );
