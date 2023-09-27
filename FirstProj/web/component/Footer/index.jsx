@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return <div>Footer</div>;
-};
+  return <div className="bg-[#F6F6F7]">Footer</div>;
+}
 
 export default Footer;
