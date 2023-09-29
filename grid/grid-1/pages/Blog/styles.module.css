@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  grid-auto-rows: 3fr;
+  border: 2px solid black;
+}
+.items {
+  border: 1px solid grey;
+}

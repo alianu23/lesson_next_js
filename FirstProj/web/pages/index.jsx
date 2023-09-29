@@ -16,21 +16,25 @@ export default function Home() {
     console.log(data);
   };
   return (
-    <main>
+    <main className="container mx-auto">
       {" "}
       <section>
         <CardTop />
       </section>
       <section className="flex flex-col items-center">
         {" "}
-        <h1 className="my-6 mt-32 font-semibold"> All blog post</h1>
-        <div className="grid grid-cols-3 ">
-          {blogs.map((blog, i) => (
-            <Cards blog={blog} />
-          ))}
-          
+        <div className="flex flex-col content-start items-start">
+          <h1 className="my-6 mt-32 font-semibold"> All blog post</h1>
+
+          <div className="grid grid-cols-3 ">
+            {blogs.map((blog, i) => (
+              <Cards blog={blog} />
+            ))}
+          </div>
         </div>
-        <button className="border w-auto py-2 px-3 my-4 mb-10 rounded-md text-[#696A75]">Load More</button>
+        <button className="border w-auto py-2 px-3 my-4 mb-10 rounded-md text-[#696A75]">
+          Load More
+        </button>
       </section>{" "}
     </main>
   );
