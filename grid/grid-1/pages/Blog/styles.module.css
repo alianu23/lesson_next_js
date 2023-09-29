@@ -1,10 +1,21 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 2fr;
-  grid-auto-rows: 3fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-rows: 1fr 2fr;
+  grid-auto-rows: 3fr; */
   border: 2px solid black;
 }
 .items {
+  padding: 20px;
   border: 1px solid grey;
+}
+.items:first-child {
+  background-color: salmon;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+.items:nth-child(10) {
+  background-color: aqua;
+  grid-column: 3 / span 4;
+  grid-row: 3 / span 2;
 }
