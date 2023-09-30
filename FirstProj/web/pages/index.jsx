@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Cards from "@/component/Cards";
-import CardTop from "@/component/CardTop";
+import Cards from "./Cards";
+import CardTop from "./CardTop";
 
 export default function Home() {
   const [blogs, setBlogs] = useState([]);

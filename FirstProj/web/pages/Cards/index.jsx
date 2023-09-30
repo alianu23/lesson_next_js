@@ -2,7 +2,7 @@ import React from "react";
 
 const Cards = ({ blog }) => {
   return (
-    <a className="border flex flex-col p-4 rounded-[15px] mr-3 mb-3">
+    <div className="border flex flex-col p-4 rounded-[15px] mr-3 mb-3">
       <img
         src={blog.cover_image ? blog.cover_image : "/unsplash.avif"}
         className="h-[200px] w-full mb-3 rounded-md"
@@ -22,8 +22,7 @@ const Cards = ({ blog }) => {
           <h4 className="text-base ml-2">{blog.readable_publish_date}</h4>
         </div>
       </a>
-      
-    </a>
+    </div>
   );
 };
 
