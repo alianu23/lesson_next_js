@@ -3,7 +3,7 @@ import React from "react";
 const MediumCard = ({ blogData, key }) => {
   return (
     <div className="mr-4">
-      <img src={blogData?.social_image || ""} alt="" className="h-60 w-96" />
+      <img src={blogData?.social_image || ""} alt="" className="h-60 mb-3" />
       <p className="text-[#97989F] text-base">
         {blogData.readable_publish_date}
       </p>

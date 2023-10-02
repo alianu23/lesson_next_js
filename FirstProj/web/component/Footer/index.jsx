@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-[#F6F6F7]">
+    <div className="bg-[#F6F6F7] mt-6">
       <div className=" grid grid-cols-3 p-5">
         <div>
           <h2 className="font-semibold text-lg mb-3">About</h2>
-          <p className="text-[#696A75]">
+          <p className="text-[#696A75] mb-3 w-60">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam
@@ -34,10 +34,9 @@ const Footer = () => {
           <img className="h-5 w-5" src="/linkedin.png" alt="" />
         </div>
       </div>
-      <div className="flex content-between items-center">
+      <div className="grid grid-cols-2 mx-4 mb-3">
         <div className="flex content-center items-center">
           <img className="w-11 h-11" src="/Union.png" alt="" />
-          gi
           <div className="ml-2 ">
             <h1 className="text-xl text-[#141624]">
               Meta <span className="font-extrabold">Blog</span>
@@ -45,7 +44,7 @@ const Footer = () => {
             <p className="text-[#3B3C4A]">© All Rights Reserved</p>
           </div>
         </div>
-        <div className="flex text-[#3B3C4A]">
+        <div className="flex text-[#3B3C4A] items-center">
           <h3 className="px-2">Terms of Use</h3>
           <h3 className="border-x-2 px-2">Privacy Policy</h3>
           <h3 className="px-2">Cookie Policy</h3>

@@ -24,5 +24,23 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    margin: 10px 100px
+  margin: 10px 100px;
+}
+.blog-content p {
+  @apply my-4;
+}
+.blog-content h2 {
+  @apply text-2xl;
+  @apply font-semibold;
+}
+.blog-content h4 {
+  @apply text-lg;
+  @apply font-semibold;
+}
+
+.blog-content ol {
+  @apply list-decimal;
+}
+.blog-content ul {
+  @layer list-disk;
 }

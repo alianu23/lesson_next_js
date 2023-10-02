@@ -17,7 +17,7 @@ const RecentBlog = () => {
     const data = await res.json();
     console.log("data", data);
     setRecentBlogMid(data.shift());
-    setRecentBlogSmall(data.slice(0, 2));
+    setRecentBlogSmall(data);
     console.log("jijig", recentBlogSmall);
     setRecentBlogBig(data.pop());
   };

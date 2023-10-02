@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "moment": "^2.29.4",
+    "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest"
   }
-
 }

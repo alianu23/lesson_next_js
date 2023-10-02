@@ -4,7 +4,7 @@ const BigCard = ({ blogData }) => {
   return (
     <div>
       <div className="flex my-6 ">
-        <img className="w-96 h-60" src={blogData.social_image} alt="" />
+        <img className=" h-60" src={blogData.social_image} alt="" />
         <div className="ml-3">
           <p className="text-[#97989F] text-base">
             {blogData.readable_publish_date}
