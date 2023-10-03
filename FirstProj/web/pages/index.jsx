@@ -32,8 +32,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <button className="border w-auto py-2 px-3 my-4 mb-10 rounded-md text-[#696A75]">
-          Load More
+        <button className="border w-auto py-2 px-3 mt-4 mb-10 rounded-md text-[#696A75]">
+          See More
         </button>
       </section>{" "}
     </main>

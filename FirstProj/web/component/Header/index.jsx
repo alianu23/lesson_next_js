@@ -16,8 +16,8 @@ const Header = () => {
         </Link>
         <div className="flex gap-12  font-light">
           <a href="/">Home</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
+          <a href="/Blog">Blog</a>
+          <a href="/Contact">Contact</a>
         </div>
         <input
           type="text"

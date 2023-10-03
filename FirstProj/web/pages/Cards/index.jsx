@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Cards = ({ blog }) => {
   return (
-    <Link href={"/blog/" + blog.id}>
+    <Link href={"/EachId/" + blog.id}>
       <div className="border flex flex-col p-4 rounded-[15px] mr-3 mb-3">
         <img
           src={blog.cover_image ? blog.cover_image : "/unsplash.avif"}
