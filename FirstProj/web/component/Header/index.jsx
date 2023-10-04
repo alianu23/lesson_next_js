@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -19,11 +20,10 @@ const Header = () => {
           <a href="/Blog">Blog</a>
           <a href="/Contact">Contact</a>
         </div>
-        <input
-          type="text"
-          placeholder="Search"
-          className="p-2 bg-[#F4F4F5] rounded-md"
-        />
+        <div className="bg-[#F4F4F5] flex p-2 rounded-md items-center">
+          <input type="text" placeholder="Search" className="bg-[#F4F4F5]" />
+          <AiOutlineSearch className="w-[22px] h-[22px] " />
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const RecentBlog = () => {
     <div>
       <h1 className="my-5 mt-28 font-extrabold text-xl"> Recent blog posts</h1>
 
-      <div className="flex flex-row">
+      <div className="flex flex-row ">
         <MediumCard blogData={recentBlogMid} />
         <SmallCard blogData={recentBlogSmall} />
       </div>

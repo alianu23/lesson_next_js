@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-[#F6F6F7] mt-6">
+    <div className="bg-[#F6F6F7] mt-6 bottom-0 ">
       <div className=" grid grid-cols-3 p-5">
         <div>
           <h2 className="font-semibold text-lg mb-3">About</h2>
@@ -23,9 +23,13 @@ const Footer = () => {
           </h3>
         </div>
         <div className="text-[#3B3C4A]">
-          <h2>Home</h2>
-          <h2>Blog</h2>
-          <h2>Contact</h2>
+          <a href="/" className="mr-2">
+            Home
+          </a>
+          <a href="/Blog" className="mr-2">
+            Blog
+          </a>
+          <a href="/Contact">Contact</a>
         </div>
         <div className="flex ">
           <img className="h-5 w-5 mr-2" src="./facebook.png" alt="" />
