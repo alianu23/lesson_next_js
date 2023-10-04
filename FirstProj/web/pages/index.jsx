@@ -26,7 +26,7 @@ export default function Home() {
         <div className="flex flex-col content-start items-start">
           <h1 className="my-6 mt-32 font-semibold"> All blog post</h1>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  ">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
             {blogs.map((blog, i) => (
               <Cards blog={blog} />
             ))}
