@@ -15,8 +15,7 @@ const AllBlogPost = () => {
 
   const fetchData = async () => {
     try {
-      const res = await getData("https://dev.to/api/articles/?per_page=12");
-      const data = await res.json();
+      const data = await getData("https://dev.to/api/articles/?per_page=9");
       console.log("Data9", data);
       setBlogs(data);
       setIsLoading(false);
