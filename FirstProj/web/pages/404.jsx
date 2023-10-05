@@ -1,11 +1,20 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const ErrorPage = () => {
   return (
-    <div className="container mx-auto flex content-center items-center w-[450px] h-[calc(100vh-402px)]">
-      <div>
-        <h1 className="text-7xl mr-5 pr-12">404</h1>
-      </div>
+    <div className="container mx-auto flex content-center items-center w-[450px] h-[calc(100vh-390px)]">
+      <motion.div
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+        }}
+      >
+        <div>
+          <img src="./404error.svg" alt="" className="w-96 h-96" />
+        </div>
+      </motion.div>
       <div className="flex flex-col border-l-[1px] pl-12">
         <h3 className="text-2xl font-['Work-sans']">Page Not Found</h3>
         <p className="text-lg text-gray-500 font-['Work-sans'] my-4">

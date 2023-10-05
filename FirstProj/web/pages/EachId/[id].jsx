@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { formatDate } from "@/utils/functions";
+import { formatDate, getData } from "@/utils/functions";
 
 const BlogDetail = () => {
   const router = useRouter();
@@ -11,9 +11,8 @@ const BlogDetail = () => {
   console.log("Router", id);
 
   const getBlogDetail = async () => {
-    const res = await fetch(`https://dev.to/api/articles/${id}
+    const data = await getData(`https://dev.to/api/articles/${id}
 `);
-    const data = await res.json();
     console.log("data", data);
     setDetailData(data);
   };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MediumCard from "@/component/MediumCard";
 import SmallCard from "@/component/SmallCard";
 import BigCard from "@/component/BigCard";
+import { getData } from "@/utils/functions";
 
 const RecentBlog = () => {
   const [recentBlogMid, setRecentBlogMid] = useState({});
@@ -13,8 +14,7 @@ const RecentBlog = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await fetch("https://dev.to/api/articles/latest?per_page=4");
-    const data = await res.json();
+    const data = await getData("https://dev.to/api/articles/latest?per_page=4");
     console.log("data", data);
     setRecentBlogMid(data.shift());
     setRecentBlogSmall(data);
