@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const MediumCard = ({ blogData, key }) => {
   return (
-    <Link href={"/EachId/" + blogData.id}>
-      <div className="mr-4">
+    <Link href={"/Blog/Details/" + blogData.id}>
+      <div className="mr-4 mb-5">
         <img src={blogData?.social_image || ""} alt="" className="h-60 mb-3" />
         <p className="text-[#97989F] text-base">
           {blogData.readable_publish_date}

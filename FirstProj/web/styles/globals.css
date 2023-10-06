@@ -29,13 +29,14 @@ body {
 .blog-content p {
   @apply my-4;
 }
-.blog-content h2 {
-  @apply text-2xl;
-  @apply font-semibold;
+.blog-content h1 {
+  @apply lg:text-2xl md:text-xl text-lg font-semibold;
 }
-.blog-content h4 {
-  @apply text-lg;
-  @apply font-semibold;
+.blog-content h2 {
+  @apply lg:text-xl md:text-lg text-base font-semibold;
+}
+.blog-content h3 {
+  @apply lg:text-lg md:text-base text-sm font-semibold;
 }
 
 .blog-content ol {

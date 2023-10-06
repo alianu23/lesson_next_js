@@ -3,9 +3,9 @@ import React from "react";
 
 const BigCard = ({ blogData }) => {
   return (
-    <Link href={"/EachId/" + blogData.id}>
+    <Link href={"/Blog/Details/" + blogData.id}>
       <div>
-        <div className="flex my-6 ">
+        <div className="flex my-6 lg:flex-row flex-col">
           <img className=" h-60" src={blogData.social_image} alt="" />
           <div className="ml-3">
             <p className="text-[#97989F] text-base">

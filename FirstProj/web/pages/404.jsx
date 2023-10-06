@@ -12,7 +12,7 @@ const ErrorPage = () => {
         }}
       >
         <div>
-          <img src="./404error.svg" alt="" className="w-96 h-96" />
+          <img src="/404error.svg" alt="" className="w-96 h-96" />
         </div>
       </motion.div>
       <div className="flex flex-col border-l-[1px] pl-12">

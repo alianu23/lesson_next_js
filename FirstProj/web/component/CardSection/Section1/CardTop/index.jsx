@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import MediumCard from "@/component/MediumCard";
-import SmallCard from "@/component/SmallCard";
-import BigCard from "@/component/BigCard";
+import MediumCard from "@/component/CardSection/Section1/MediumCard";
+import SmallCard from "@/component/CardSection/Section1/SmallCard";
+import BigCard from "@/component/CardSection/Section1/BigCard";
 import { getData } from "@/utils/functions";
+import Link from "next/link";
 
 const RecentBlog = () => {
   const [recentBlogMid, setRecentBlogMid] = useState({});
@@ -26,7 +27,7 @@ const RecentBlog = () => {
     <div>
       <h1 className="my-5 mt-28 font-extrabold text-xl"> Recent blog posts</h1>
 
-      <div className="flex flex-row ">
+      <div className="flex flex-col sm:flex-row">
         <MediumCard blogData={recentBlogMid} />
         <SmallCard blogData={recentBlogSmall} />
       </div>
