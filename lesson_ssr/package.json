@@ -1,5 +1,5 @@
 {
-  "name": "lesson_next_ssr",
+  "name": "lesson_ssr",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
-    "moment": "^2.29.4",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
