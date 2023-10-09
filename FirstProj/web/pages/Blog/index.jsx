@@ -43,7 +43,7 @@ const AllBlogPost = () => {
       {!isLoading && !error && (
         <div className="container mx-auto">
           <section className="flex flex-col items-center">
-            <div className="flex flex-col content-start items-start">
+            <div className="flex flex-col content-start items-center">
               <h1 className="my-6 mt-32 font-semibold sm:text-center ">
                 All blog post
               </h1>

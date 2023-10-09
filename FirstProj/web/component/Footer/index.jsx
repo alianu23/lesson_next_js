@@ -40,25 +40,29 @@ const Footer = () => {
         <div className="flex mt-1 ml-2 ">
           <img
             className="lg:h-5 lg:w-5 w-4 h-4 mr-2"
-            src="./facebook.png"
+            src="/Logos/facebook.png"
             alt=""
           />
           <img
             className="lg:h-5 lg:w-5 w-4 h-4  mr-2"
-            src="/twitter.png"
+            src="/Logos/twitter.png"
             alt=""
           />
           <img
             className="lg:h-5 lg:w-5 w-4 h-4  mr-2"
-            src="/insta.png"
+            src="/Logos/insta.png"
             alt=""
           />
-          <img className="lg:h-5 lg:w-5 w-4 h-4 " src="/linkedin.png" alt="" />
+          <img
+            className="lg:h-5 lg:w-5 w-4 h-4 "
+            src="/Logos/linkedin.png"
+            alt=""
+          />
         </div>
       </div>
       <div className="grid grid-cols-2 mx-4 mb-3">
         <div className="flex content-center items-center">
-          <img className="w-11 h-11" src="/Union.png" alt="" />
+          <img className="w-11 h-11" src="/Logos/Union.png" alt="" />
           <div className="ml-2 ">
             <h1 className="lg:text-lg md:text-base text-xs text-[#141624]">
               Meta{" "}
