@@ -1,7 +1,7 @@
 import React from "react";
-import Cards from "../../component/CardSection/Cards";
+import Cards from "../../components/CardSection/Cards";
 import { useState, useEffect } from "react";
-import Loader from "@/component/Loader";
+import Loader from "@/components/Loader";
 import { getData } from "@/utils/functions";
 
 const AllBlogPost = () => {
@@ -44,10 +44,10 @@ const AllBlogPost = () => {
         <div className="container mx-auto">
           <section className="flex flex-col items-center">
             <div className="flex flex-col content-start items-center">
-              <h1 className="my-6 mt-32 font-semibold sm:text-center ">
+              <h1 className="my-6 mt-7 font-semibold sm:text-center ">
                 All blog post
               </h1>
-              <div className="grid grid-cols-1 sm:mx-20  md:grid-cols-2 lg:grid-cols-3 ">
+              <div className="grid grid-cols-1 sm:mx-20 truncate md:grid-cols-2 lg:grid-cols-3 ">
                 {blogs.map((blog, i) => (
                   <Cards blog={blog} />
                 ))}

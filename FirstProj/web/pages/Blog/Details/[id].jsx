@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { formatDate, getData } from "@/utils/functions";
-import Loader from "@/component/Loader";
+import Loader from "@/components/Loader";
 
 const BlogDetail = () => {
   const router = useRouter();

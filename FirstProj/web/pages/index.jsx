@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Cards from "../component/CardSection/Cards";
-import CardTop from "../component/CardSection/Section1/CardTop";
-import Loader from "@/component/Loader";
+import Cards from "../components/CardSection/Cards";
+import CardTop from "../components/CardSection/Section1/CardTop";
+import Loader from "@/components/Loader";
 import { getData } from "@/utils/functions";
 
 export default function Home() {
@@ -52,8 +52,8 @@ export default function Home() {
                 All blog post
               </h1>
               <div className="grid grid-cols-1 sm:mx-20  md:grid-cols-2 lg:grid-cols-3 ">
-                {blogs.map((blog, i) => (
-                  <Cards blog={blog} />
+                {blogs.map((blog) => (
+                  <Cards key={blog.id} blog={blog} />
                 ))}
               </div>
             </div>

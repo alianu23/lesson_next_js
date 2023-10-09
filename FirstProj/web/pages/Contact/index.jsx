@@ -1,7 +1,7 @@
 import React from "react";
-import ContactBig from "@/component/ContactSection/ContactBig";
-import ContactInfo from "@/component/ContactSection/ContactInfo";
-import ContactMessage from "@/component/ContactSection/ContactMessage";
+import ContactBig from "@/components/ContactSection/ContactBig";
+import ContactInfo from "@/components/ContactSection/ContactInfo";
+import ContactMessage from "@/components/ContactSection/ContactMessage";
 
 const Contact = () => {
   return (
