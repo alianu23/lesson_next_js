@@ -14,7 +14,7 @@ const ContactMessage = () => {
         "service_7w24tx9",
         "template_2c6fl4e",
         form.current,
-        "Pj6rCxp6cUQWBHKbb"
+        "X9V4twZZAeXHPOuSO"
       )
       .then(
         (result) => {
@@ -69,18 +69,22 @@ const ContactMessage = () => {
               className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
             ></textarea>
           </div>
-          <button
-            type="submit"
-            form="userForm"
-            className="bg-[#4B6BFB] py-2 px-4 text-white rounded-md mt-8 "
-          >
-            Send Message
-          </button>
-          {success == "sent"
-            ? "Email is sent successfully. We will contact you soon"
-            : success == "not sent"
-            ? "email did not send "
-            : ""}
+          <div>
+            <button
+              type="submit"
+              form="userForm"
+              className="bg-[#4B6BFB] py-2 px-4 text-white rounded-md mt-8 "
+            >
+              Send Message
+            </button>
+            <div>
+              {success == "sent"
+                ? "Email is sent successfully. We will contact you soon"
+                : success == "not sent"
+                ? "email did not send "
+                : ""}
+            </div>
+          </div>
         </div>
       </div>
     </form>
