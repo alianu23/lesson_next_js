@@ -1,72 +1,89 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+
+import emailjs from "@emailjs/browser";
 
 const ContactMessage = () => {
-  async function handleSubmit(e) {
+  const form = useRef();
+
+  const [success, setSuccess] = useState("");
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "post",
-        body: new URLSearchParams(data),
-      });
-      if (!response.ok) {
-        throw new Error(`Invalid response: ${response.status}`);
-      }
-      alert("Thanks for contacting us, we will get back to you soon!");
-    } catch (err) {
-      console.error(err);
-      alert("We can't submit the form, try again later?");
-    }
-  }
+    emailjs
+      .sendForm(
+        "service_7w24tx9",
+        "template_2c6fl4e",
+        form.current,
+        "Pj6rCxp6cUQWBHKbb"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess("sent");
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess("not sent");
+        }
+      );
+  };
 
   return (
-    <div className="mt-11 w-auto pl-[35px] pr-[200px] pt-[29px] pb-[26px] bg-neutral-100 rounded-xl ">
-      <div>
-        <h1 className="text-lg font-semibold mb-6">Leave a Message</h1>
+    <form className="p-6 mt-11" id="userForm" ref={form} onSubmit={sendEmail}>
+      <div className="mt-11 w-auto pl-[35px] pr-[200px] pt-[29px] pb-[26px] bg-neutral-100 rounded-xl ">
         <div>
-          <input
-            type="text"
-            id="frm-name"
-            autoComplete="given-name"
-            placeholder="Your Name"
-            required
-            className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-7"
-          />
-          <input
-            type="email"
-            id="frm-email"
-            name="email"
-            autoComplete="email"
-            placeholder="Your Email"
-            required
-            className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
-          />
+          <h1 className="text-lg font-semibold mb-6">Leave a Message</h1>
+          <div>
+            <input
+              type="text"
+              id="frm-name"
+              autoComplete="given-name"
+              placeholder="Your Name"
+              required
+              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-7"
+            />
+            <input
+              type="email"
+              id="frm-email"
+              name="email"
+              autoComplete="email"
+              placeholder="Your Email"
+              required
+              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
+            />
+          </div>
+        </div>
+        <div>
+          <div className="flex flex-col mt-7 ">
+            <input
+              type="text"
+              placeholder="Subject"
+              required
+              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mb-7"
+            />
+            <textarea
+              placeholder="Write a Message"
+              cols="30"
+              rows="10"
+              id="frm-message"
+              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            form="userForm"
+            className="bg-[#4B6BFB] py-2 px-4 text-white rounded-md mt-8 "
+          >
+            Send Message
+          </button>
+          {success == "sent"
+            ? "Email is sent successfully. We will contact you soon"
+            : success == "not sent"
+            ? "email did not send "
+            : ""}
         </div>
       </div>
-      <div>
-        <div className="flex flex-col mt-7 ">
-          <input
-            type="text"
-            placeholder="Subject"
-            required
-            className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mb-7"
-          />
-          <textarea
-            placeholder="Write a Message"
-            cols="30"
-            rows="10"
-            id="frm-message"
-            className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          className="bg-[#4B6BFB] py-2 px-4 text-white rounded-md mt-8 "
-        >
-          Send Message
-        </button>
-      </div>
-    </div>
+    </form>
   );
 };
 

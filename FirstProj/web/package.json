@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@superfaceai/one-sdk": "^2.4.2",
+    "emailjs": "^4.0.3",
     "framer-motion": "^10.16.4",
     "moment": "^2.29.4",
     "next": "latest",

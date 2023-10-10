@@ -1,50 +1,47 @@
-const { SuperfaceClient } = require("@superfaceai/one-sdk");
+const { SuperfaceClient } = required("@superfaceai/one-sdk");
 
-const sdk = new SuperfaceClient();
+// You can manage tokens here: https://superface.ai/insights
+const sdk = new SuperfaceClient({
+  sdkAuthToken:
+    "sfs_3ba3d928c98b7d99a44c965af6f63774a5de7569e73a1b6df8297dab78810ccc59a179a7b6a35c8794da01402b0165c70a36aad1a55eb917c3d11392672139b3_41335101",
+});
 
-// Just check if all required fields are provided
-function formValid(body) {
-  return body.email && body.phone && body.first && body.last;
-}
+async function run() {
+  // Load the profile
+  const profile = await sdk.getProfile("communication/send-email@2.2.0");
 
-export default async function handler(req, res) {
-  const body = req.body;
-
-  if (!formValid(body)) {
-    res.status(422).end();
-    return;
-  }
-
-  const profile = await sdk.getProfile("communication/send-email@2.1.0");
-  const message = `
-    Email: ${body.email}
-    Phone: ${body.phone}
-    Name: ${body.first} ${body.last}
-    Message: ${body.message} 
-    `;
+  // Use the profile
   const result = await profile.getUseCase("SendEmail").perform(
     {
-      from: process.env.FROM_EMAIL,
-      to: process.env.TO_EMAIL,
-      subject: "Message from contact form",
-      text: message,
+      from: "no-reply@example.com",
+      to: "jane.doe@example.com",
+      subject: "Your order has been shipped!",
+      text: "Hello Jane, your recent order on Our Shop has been shipped.",
+      attachments: [
+        {
+          filename: "order.pdf",
+          type: "application/pdf",
+          content: "JVBERi0xLjQKJeLjz9MKMyAwIG9...",
+        },
+      ],
     },
     {
       provider: "sendgrid",
       security: {
         bearer_token: {
-          token: process.env.SENDGRID_API_KEY,
+          token: "<your token from sendgrid>",
         },
       },
     }
   );
 
+  // Handle the result
   try {
     const data = result.unwrap();
     console.log(data);
-    res.status(201).end();
   } catch (error) {
     console.error(error);
-    res.status(500).end();
   }
 }
+
+run();
