@@ -52,7 +52,7 @@ export default function Home({ blogs }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`https://dev.to/api/articles/?per_page=9`);
   const blogs = await res.json();
 
