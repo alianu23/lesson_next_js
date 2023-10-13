@@ -7,13 +7,6 @@ import { getData } from "@/utils/functions";
 const AllBlogPost = ({ blogs }) => {
   return (
     <main>
-      {/* {isLoading && <Loader />}
-      {error && (
-        <h1 className="text-red-700 text-3xl text-center my-10 h-[calc(100vh-520px)] ">
-          {error}
-        </h1>
-      )}
-      {!isLoading && !error && ( */}
       <div className="container mx-auto">
         <section className="flex flex-col items-center">
           <div className="flex flex-col content-start items-center">

@@ -22,20 +22,18 @@ const Header = () => {
   const isActive = usePathname();
 
   return (
-    <div className=" container mx-auto mt-4 border-b-[1px] pb-3">
-      <div className="flex items-center justify-between">
+    <div className=" container mx-auto border-b-[1px] ">
+      <div className="flex items-center justify-between lg:flex-row flex-col">
         <Link href={"/"}>
-          <div href="/" className="flex items-center mr-3">
+          <div href="/" className="flex items-center mr-3 my-5">
             <img
               src="/Logos/Union.png"
               alt=""
-              className="lg:w-9 lg:h-9 md:w-7 md:h-7 mr-1 w-4 h-4"
+              className="lg:w-9 md:w-7 md:h-7 mr-1 w-4 h-4"
             />
-            <h1 className="flex-1 lg:text-base md:text-sm text-xs">
+            <h1 className="flex-1 text-base ">
               Meta
-              <span className="font-semibold lg:text-base md:text-sm text-xs">
-                Blog
-              </span>
+              <span className="font-semibold text-base ">Blog</span>
             </h1>
           </div>
         </Link>
@@ -54,7 +52,7 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <div className="bg-[#F4F4F5] flex p-2 rounded-md items-center">
+        <div className="bg-[#F4F4F5] flex p-2 rounded-md items-center my-5">
           <input
             type="text"
             placeholder="Search"

@@ -33,14 +33,14 @@ const ContactMessage = () => {
       <div className="mt-11 w-auto pl-[35px] pr-[200px] pt-[29px] pb-[26px] bg-neutral-100 rounded-xl ">
         <div>
           <h1 className="text-lg font-semibold mb-6">Leave a Message</h1>
-          <div className="flex">
+          <div className="md:flex sm:w-20">
             <input
               type="text"
               name="from_name"
               autoComplete="given-name"
               placeholder="Your Name"
               required
-              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-7"
+              className="border shrink flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-7"
             />
             <input
               type="email"
@@ -48,7 +48,7 @@ const ContactMessage = () => {
               autoComplete="email"
               placeholder="Your Email"
               required
-              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
+              className="border shrink flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
             />
           </div>
         </div>

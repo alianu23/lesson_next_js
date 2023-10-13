@@ -6,7 +6,11 @@ const BigCard = ({ blogData }) => {
     <Link href={"/Blog/Details/" + blogData.id}>
       <div>
         <div className="flex my-6 lg:flex-row flex-col">
-          <img className=" h-60" src={blogData.social_image} alt="" />
+          <img
+            className="h-60 w-[90%] lg:w-auto"
+            src={blogData.social_image}
+            alt=""
+          />
           <div className="ml-3">
             <p className="text-[#97989F] text-base">
               {blogData.readable_publish_date}
