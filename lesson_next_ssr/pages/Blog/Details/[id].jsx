@@ -60,8 +60,12 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const res = await fetch(`https://dev.to/api/articles/?per_page=5`);
   const articles = await res.json();
+  const res1 = await fetch("https://dev.to/api/articles/latest?per_page=4");
+  const articles2 = await res1.json();
   const ids = articles.map((article) => article.id);
-  console.log(ids);
+  const ids2 = articles2.map((article) => article.id);
+  ids.concat(ids2);
+  console.log(ids2);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
   return {
