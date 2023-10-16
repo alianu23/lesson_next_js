@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { formatDate, getData } from "@/utils/functions";
-import Loader from "@/components/Loader";
+import React from "react";
+import { formatDate } from "@/utils/functions";
 
 const BlogDetail = ({ article }) => {
   return (
-    <div className="container mx-auto mt-24 max-w-4xl">
+    <div className="container lg:mx-auto mx-10 mt-24 max-w-3xl ">
       <div>
         {article ? (
           <>
             <div>
-              <h1 className="text-4xl font-semibold text-slate-900 ">
+              <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-slate-900 ">
                 {article.title}
               </h1>
-              <div className="flex items-center mt-5 gap-5">
-                <div className="flex items-center">
+              <div className="flex lg:items-center items-start lg:flex-row flex-col mt-5 gap-5">
+                <div className="flex items-center ">
                   <img
                     className="w-8 h-8 rounded-full"
                     src={article.user.profile_image}
@@ -29,7 +27,7 @@ const BlogDetail = ({ article }) => {
                 </p>
               </div>
             </div>
-            <div className="my-8">
+            <div className="my-8 w-auto">
               <div
                 className="blog-content"
                 dangerouslySetInnerHTML={{
@@ -55,6 +53,7 @@ export async function getStaticProps(context) {
 
   return {
     props: { article },
+    revalidate: 110,
   };
 }
 export async function getStaticPaths() {
@@ -65,11 +64,11 @@ export async function getStaticPaths() {
   const ids = articles.map((article) => article.id);
   const ids2 = articles2.map((article) => article.id);
   ids.concat(ids2);
-  console.log(ids2);
+  console.log("ids2", ids2);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }

@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <div className="bg-[#F6F6F7] mt-6 bottom-0 pb-5 ">
-      <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-5">
+      <div className=" grid lg:grid-cols-3 mx-24 md:grid-cols-2 grid-cols-1 p-5">
         <div>
           <h2 className="font-semibold lg:text-lg md:text-base text-sm mb-3">
             About
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="grid lg:grid-cols-2 grid-cols-1 mx-4 mb-3">
-        <div className="flex content-center items-center">
+        <div className="flex content-center mx-24 items-center">
           <img className="w-11 h-11" src="/Logos/Union.png" alt="" />
           <div className="ml-2 ">
             <h1 className="lg:text-lg md:text-base text-xs text-[#141624]">
@@ -107,7 +107,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="flex text-[#3B3C4A] lg:text-lg md:text-base text-xs items-center mt-3">
+        <div className="flex text-[#3B3C4A] mx-24 lg:text-lg md:text-base text-xs items-center mt-3">
           <h3 className="px-2 lg:text-lg md:text-base text-xs">Terms of Use</h3>
           <h3 className="border-x-2 px-2 lg:text-lg md:text-base text-xs">
             Privacy Policy

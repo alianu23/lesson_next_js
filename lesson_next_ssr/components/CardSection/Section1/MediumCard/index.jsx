@@ -5,7 +5,11 @@ const MediumCard = ({ blogData, key }) => {
   return (
     <Link href={"/Blog/Details/" + blogData.id}>
       <div className="mr-4 mb-5">
-        <img src={blogData?.social_image || ""} alt="" className="h-60 mb-3" />
+        <img
+          src={blogData?.social_image || ""}
+          alt=""
+          className="lg:h-60 h-28 lg:w-[480px] w-80  mb-3"
+        />
         <p className="text-[#97989F] text-base">
           {blogData.readable_publish_date}
         </p>

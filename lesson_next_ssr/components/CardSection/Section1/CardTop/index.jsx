@@ -24,7 +24,7 @@ const RecentBlog = () => {
   };
 
   return (
-    <div>
+    <div >
       <h1 className="my-5 mt-28 font-extrabold text-xl"> Recent blog posts</h1>
 
       <div className="flex flex-col sm:flex-row">

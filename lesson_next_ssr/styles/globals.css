@@ -24,24 +24,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  margin: 10px 100px;
-}
-.blog-content p {
-  @apply my-4;
-}
-.blog-content h1 {
-  @apply lg:text-2xl md:text-xl text-lg font-semibold;
-}
-.blog-content h2 {
-  @apply lg:text-xl md:text-lg text-base font-semibold;
-}
-.blog-content h3 {
-  @apply lg:text-lg md:text-base text-sm font-semibold;
+  /* margin-left: 100px;
+  margin-right: 100px; */
 }
 
-.blog-content ol {
-  @apply list-decimal;
-}
-.blog-content ul {
-  @layer list-disk;
+.blog-content p {
+  @apply my-6;
 }

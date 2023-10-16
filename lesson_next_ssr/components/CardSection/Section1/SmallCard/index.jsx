@@ -7,13 +7,13 @@ const SmallCard = ({ blogData }) => {
     <div className="flex  flex-col  ">
       {blogData.map((data) => (
         <Link key={data.id} href={"/Blog/Details/" + data.id}>
-          <div className="flex lg:flex-row md:flex-col flex-col mb-8 ">
+          <div className="flex lg:flex-row md:flex-col flex-col mb-12 ">
             <img
-              className="md:w-96 w-80 "
+              className="w-96 lg:w-64 "
               src={data?.social_image || ""}
               alt=""
             />
-            <div className="ml-3">
+            <div className="ml-3 lg:w-96 w-auto ">
               <p className="text-[#97989F] text-base">
                 {data.readable_publish_date}
               </p>

@@ -1,10 +1,12 @@
 import React from "react";
 import Cards from "../../components/CardSection/Cards";
-import { useState, useEffect } from "react";
+import { useRouter } from "react";
 import Loader from "@/components/Loader";
 import { getData } from "@/utils/functions";
 
 const AllBlogPost = ({ blogs }) => {
+  const router = useRouter();
+
   return (
     <main>
       <div className="container mx-auto">
@@ -20,7 +22,10 @@ const AllBlogPost = ({ blogs }) => {
             </div>
           </div>
           <button
-            // onClick={HandleNext}
+            onClick={() => {
+              const pg = number(page) + 3;
+              router.replace("/page" + pg);
+            }}
             className="border w-auto py-2 px-3 mt-4 mb-10 rounded-md text-[#696A75] hover:bg-sky-700 hover:text-white"
           >
             See More
@@ -34,14 +39,17 @@ const AllBlogPost = ({ blogs }) => {
 
 export default AllBlogPost;
 
-export async function getStaticProps() {
-  const res = await fetch(`https://dev.to/api/articles/?per_page=9`);
+export async function getServerSideProps(context) {
+  let { page } = context.query;
+  page = page || 3;
+  const res = await fetch(`https://dev.to/api/articles/?per_page=${page}`);
   const blogs = await res.json();
   console.log("Res", blogs);
 
   return {
     props: {
       blogs,
+      page,
     },
   };
 }
