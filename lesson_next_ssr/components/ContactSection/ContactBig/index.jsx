@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactBig = () => {
   return (
-    <div>
-      <h1 className="lg:text-4xl md:text-3xl text-xl font-semibold">
+    <div className="mx-3">
+      <h1 className="lg:text-4xl md:text-3xl  text-xl font-semibold">
         {" "}
         Contact Us
       </h1>

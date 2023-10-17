@@ -3,7 +3,7 @@ import { formatDate } from "@/utils/functions";
 
 const BlogDetail = ({ article }) => {
   return (
-    <div className="container lg:mx-auto  mt-24 max-w-3xl ">
+    <div className="container mx-auto mt-8 max-w-3xl ">
       <div className="mx-5">
         {article ? (
           <>

@@ -29,13 +29,13 @@ const ContactMessage = () => {
   };
 
   return (
-    <form className="p-6 mt-11" id="userForm" ref={form} onSubmit={sendEmail}>
-      <div className="mt-11 w-auto p-7 bg-neutral-100 rounded-xl ">
+    <form id="userForm" ref={form} onSubmit={sendEmail}>
+      <div className="mt-8 w-auto p-7 mx-3 bg-neutral-100 rounded-xl ">
         <div>
-          <h1 className="lg:text-lg md:text-base text-sm font-semibold mb-6">
+          <h1 className="lg:text-2xl md:text-xl text-lg font-sans mb-6">
             Leave a Message
           </h1>
-          <div className="flex lg:flex-row flex-col">
+          <div className="flex lg:flex-row md:flex-row flex-col">
             <input
               type="text"
               name="from_name"
@@ -71,7 +71,7 @@ const ContactMessage = () => {
               className="border lg:mr-0 mr-5 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
             ></textarea>
           </div>
-          <div>
+          <div className="flex lg:items-center md:items-center items-start lg:flex-row md:flex-row flex-col">
             <button
               type="submit"
               form="userForm"
@@ -79,11 +79,11 @@ const ContactMessage = () => {
             >
               Send Message
             </button>
-            <div>
+            <div className="ml-2 lg:mt-8 md:mt-8 mt-2">
               {success == "sent"
-                ? "Email is sent successfully. We will contact you soon"
+                ? "- Email is sent successfully. We will contact you soon"
                 : success == "not sent"
-                ? "email did not send "
+                ? "- email did not send "
                 : ""}
             </div>
           </div>

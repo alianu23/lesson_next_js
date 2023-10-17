@@ -40,6 +40,3 @@ body {
 .blog-content pre {
   @apply lg:text-base md:text-base text-sm truncate;
 }
-.blog-content {
-  @apply mr-5;
-}
