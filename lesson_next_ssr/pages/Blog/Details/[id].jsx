@@ -3,8 +3,8 @@ import { formatDate } from "@/utils/functions";
 
 const BlogDetail = ({ article }) => {
   return (
-    <div className="container lg:mx-auto mx-5 mt-24 max-w-3xl ">
-      <div>
+    <div className="container lg:mx-auto  mt-24 max-w-3xl ">
+      <div className="mx-5">
         {article ? (
           <>
             <div className="flex flex-col content-center">

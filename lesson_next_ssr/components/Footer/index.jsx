@@ -28,7 +28,7 @@ const Footer = () => {
           <h2 className="font-semibold lg:text-lg md:text-base text-sm mb-3">
             About
           </h2>
-          <p className="text-[#696A75] lg:text-lg md:text-base text-xs mb-3 ">
+          <p className="text-[#696A75] lg:text-lg md:text-base text-xs mb-3 lg:w-60 w-auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam

@@ -1,14 +1,20 @@
 import { useRouter } from "next/router";
+import React, { useRef, useEffect, useState } from "react";
 
 import Cards from "../components/CardSection/Cards";
 import CardTop from "../components/CardSection/Section1/CardTop";
 
 export default function Home({ blogs, page }) {
   const router = useRouter();
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+  });
 
   return (
     <main>
-      <div className="container mx-auto">
+      <div ref={myRef} className="container mx-auto">
         <section>
           <CardTop />
         </section>

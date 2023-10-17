@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import Cards from "../../components/CardSection/Cards";
 
 const AllBlogPost = ({ blogs, page }) => {
   const router = useRouter();
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+  });
 
   return (
     <main>
-      <div className="container mx-auto">
+      <div ref={myRef} className="container mx-auto">
         <section className="flex flex-col items-center">
           <div className="flex flex-col content-start items-center">
             <h1 className="my-6 mt-7 font-bold sm:text-center ">

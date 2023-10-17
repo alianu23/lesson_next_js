@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <div className=" container mx-auto border-b-[1px] ">
-      <div className="flex items-center justify-between mx-24 lg:flex-row md:flex-row flex-col ">
+      <div className="flex items-center justify-between lg:flex-row md:flex-row flex-col ">
         <Link href={"/"}>
           <div href="/" className="flex items-center mr-3 my-5">
             <img
