@@ -1,10 +1,9 @@
 import React from "react";
-import Cards from "../../components/CardSection/Cards";
-import { useRouter } from "react";
-import Loader from "@/components/Loader";
-import { getData } from "@/utils/functions";
+import { useRouter } from "next/router";
 
-const AllBlogPost = ({ blogs }) => {
+import Cards from "../../components/CardSection/Cards";
+
+const AllBlogPost = ({ blogs, page }) => {
   const router = useRouter();
 
   return (
@@ -17,14 +16,14 @@ const AllBlogPost = ({ blogs }) => {
             </h1>
             <div className="grid grid-cols-1 sm:mx-20 truncate md:grid-cols-2 lg:grid-cols-3 ">
               {blogs.map((blog, i) => (
-                <Cards blog={blog} />
+                <Cards blog={blog} key={blog.id} />
               ))}
             </div>
           </div>
           <button
             onClick={() => {
-              const pg = number(page) + 3;
-              router.replace("/page" + pg);
+              const pg = Number(page) + 3;
+              router.replace("?page=" + pg);
             }}
             className="border w-auto py-2 px-3 mt-4 mb-10 rounded-md text-[#696A75] hover:bg-sky-700 hover:text-white"
           >
@@ -44,7 +43,6 @@ export async function getServerSideProps(context) {
   page = page || 3;
   const res = await fetch(`https://dev.to/api/articles/?per_page=${page}`);
   const blogs = await res.json();
-  console.log("Res", blogs);
 
   return {
     props: {

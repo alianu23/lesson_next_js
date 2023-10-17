@@ -4,7 +4,7 @@ import Link from "next/link";
 const Cards = ({ blog }) => {
   return (
     <Link href={"/Blog/Details/" + blog.id}>
-      <div className="border flex flex-col p-2 rounded-[15px] mr-3 mb-3 ">
+      <div className="border flex flex-col p-2 rounded-[15px] lg:mr-3 mr-0 mb-3 ">
         <img
           src={blog.cover_image ? blog.cover_image : "/Noimg/unsplash.avif"}
           className="h-[200px] w-full mb-3 rounded-md"

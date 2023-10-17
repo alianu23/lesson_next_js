@@ -24,8 +24,8 @@ const RecentBlog = () => {
   };
 
   return (
-    <div >
-      <h1 className="my-5 mt-28 font-extrabold text-xl"> Recent blog posts</h1>
+    <div>
+      <h1 className="my-5 ml-3 font-extrabold text-xl"> Recent blog posts</h1>
 
       <div className="flex flex-col sm:flex-row">
         <MediumCard blogData={recentBlogMid} />

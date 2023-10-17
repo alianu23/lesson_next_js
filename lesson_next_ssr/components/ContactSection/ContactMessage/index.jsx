@@ -30,17 +30,19 @@ const ContactMessage = () => {
 
   return (
     <form className="p-6 mt-11" id="userForm" ref={form} onSubmit={sendEmail}>
-      <div className="mt-11 w-auto pl-[35px] pr-[200px] pt-[29px] pb-[26px] bg-neutral-100 rounded-xl ">
+      <div className="mt-11 w-auto p-7 bg-neutral-100 rounded-xl ">
         <div>
-          <h1 className="text-lg font-semibold mb-6">Leave a Message</h1>
-          <div className="flex">
+          <h1 className="lg:text-lg md:text-base text-sm font-semibold mb-6">
+            Leave a Message
+          </h1>
+          <div className="flex lg:flex-row flex-col">
             <input
               type="text"
               name="from_name"
               autoComplete="given-name"
               placeholder="Your Name"
               required
-              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-7"
+              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mr-5"
             />
             <input
               type="email"
@@ -48,7 +50,7 @@ const ContactMessage = () => {
               autoComplete="email"
               placeholder="Your Email"
               required
-              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
+              className="border flex-1 py-[14px] pr-[14px] pl-5 border-zinc-200 lg:mr-0 mr-5 rounded"
             />
           </div>
         </div>
@@ -59,21 +61,21 @@ const ContactMessage = () => {
               placeholder="Subject"
               name="heading"
               required
-              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mb-7"
+              className="border lg:mr-0 mr-5 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded mb-7"
             />
             <textarea
               placeholder="Write a Message"
               cols="30"
               rows="10"
               name="message"
-              className="border py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
+              className="border lg:mr-0 mr-5 py-[14px] pr-[14px] pl-5 border-zinc-200 rounded"
             ></textarea>
           </div>
           <div>
             <button
               type="submit"
               form="userForm"
-              className="bg-[#4B6BFB] hover:bg-[#313f7c] py-2 px-4 text-white rounded-md mt-8 "
+              className="bg-[#4B6BFB] lg:text-base md:text-base text-sm hover:bg-[#313f7c]  py-2 px-4 text-white rounded-md mt-8 "
             >
               Send Message
             </button>

@@ -3,15 +3,17 @@ import { formatDate } from "@/utils/functions";
 
 const BlogDetail = ({ article }) => {
   return (
-    <div className="container lg:mx-auto mx-10 mt-24 max-w-3xl ">
+    <div className="container lg:mx-auto mx-5 mt-24 max-w-3xl ">
       <div>
         {article ? (
           <>
-            <div>
-              <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-slate-900 ">
-                {article.title}
-              </h1>
-              <div className="flex lg:items-center items-start lg:flex-row flex-col mt-5 gap-5">
+            <div className="flex flex-col content-center">
+              <img
+                className="mb-3 lg:w-[770px] md:w-[750px] w-[365px] "
+                src={article.cover_image}
+                alt=""
+              />
+              <div className="flex lg:items-center items-start lg:flex-row flex-col my-5 gap-5">
                 <div className="flex items-center ">
                   <img
                     className="w-8 h-8 rounded-full"
@@ -27,6 +29,9 @@ const BlogDetail = ({ article }) => {
                 </p>
               </div>
             </div>
+            <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-slate-900 ">
+              {article.title}
+            </h1>
             <div className="my-8 w-auto">
               <div
                 className="blog-content"
