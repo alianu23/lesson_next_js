@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
 
-const ContactMessage = () => {
+export const ContactForm = () => {
   const form = useRef();
 
   const [success, setSuccess] = useState("");
@@ -92,5 +92,3 @@ const ContactMessage = () => {
     </form>
   );
 };
-
-export default ContactMessage;

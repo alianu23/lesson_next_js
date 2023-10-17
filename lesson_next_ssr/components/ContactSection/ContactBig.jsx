@@ -1,10 +1,9 @@
 import React from "react";
 
-const ContactBig = () => {
+export const ContactBig = () => {
   return (
     <div className="mx-3">
       <h1 className="lg:text-4xl md:text-3xl  text-xl font-semibold">
-        {" "}
         Contact Us
       </h1>
       <p className="text-gray-500 lg:text-base text-sm mt-5">
@@ -17,5 +16,3 @@ const ContactBig = () => {
     </div>
   );
 };
-
-export default ContactBig;

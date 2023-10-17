@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactInfo = () => {
+export const ContactInfo = () => {
   return (
     <div className="flex lg:flex-row md:flex-row mx-3 flex-col mt-11">
       <div className="border mr-9 flex-1 w-64 p-4 rounded-xl">
@@ -18,5 +18,3 @@ const ContactInfo = () => {
     </div>
   );
 };
-
-export default ContactInfo;
