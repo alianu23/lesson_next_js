@@ -1,51 +1,65 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { formatDate } from "@/utils/functions";
+import Loader from "@/components/Loader";
+import Layout from "@/components/Layout";
 
 const BlogDetail = ({ article }) => {
-  return (
-    <div className="container mx-auto mt-8 max-w-3xl ">
-      <div className="mx-5">
-        {article ? (
-          <>
-            <div className="flex flex-col content-center">
-              <img
-                className="mb-3 lg:w-[770px] md:w-[750px] w-[365px] "
-                src={article.cover_image}
-                alt=""
-              />
-              <div className="flex lg:items-center items-start lg:flex-row flex-col my-5 gap-5">
-                <div className="flex items-center ">
-                  <img
-                    className="w-8 h-8 rounded-full"
-                    src={article.user.profile_image}
-                    alt="avatar"
-                  />
-                  <h4 className="ml-2 text-lg text-gray-500">
-                    {article.user.name}
-                  </h4>
-                </div>
-                <p className="text-lg text-gray-500">
-                  {formatDate(article.created_at)}
-                </p>
-              </div>
-            </div>
-            <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-slate-900 ">
-              {article.title}
-            </h1>
-            <div className="my-8 w-auto">
-              <div
-                className="blog-content"
-                dangerouslySetInnerHTML={{
-                  __html: article.body_html,
-                }}
-              ></div>
-            </div>
-          </>
-        ) : (
-          <div>Loading...</div>
-        )}
+  const router = useRouter();
+
+  if (router.isFallback)
+    return (
+      <div>
+        <Loader />
       </div>
-    </div>
+    );
+
+  return (
+    <Layout>
+      <div className="container mx-auto mt-8 max-w-3xl ">
+        <div className="mx-5">
+          {article ? (
+            <>
+              <div className="flex flex-col content-center">
+                <img
+                  className="mb-3 lg:w-[770px] md:w-[750px] w-[365px] "
+                  src={article.cover_image}
+                  alt=""
+                />
+                <div className="flex lg:items-center items-start lg:flex-row flex-col my-5 gap-5">
+                  <div className="flex items-center ">
+                    <img
+                      className="w-8 h-8 rounded-full"
+                      src={article.user.profile_image}
+                      alt="avatar"
+                    />
+                    <h4 className="ml-2 text-lg text-gray-500">
+                      {article.user.name}
+                    </h4>
+                  </div>
+                  <p className="text-lg text-gray-500">
+                    {formatDate(article.created_at)}
+                  </p>
+                </div>
+              </div>
+              <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-slate-900 ">
+                {article.title}
+              </h1>
+              <div className="my-8 w-auto">
+                <div
+                  className="blog-content"
+                  dangerouslySetInnerHTML={{
+                    __html: article.body_html,
+                  }}
+                ></div>
+              </div>
+            </>
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+      </div>
+    </Layout>
   );
 };
 
@@ -74,6 +88,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: true,
   };
 }

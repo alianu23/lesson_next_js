@@ -18,7 +18,7 @@ const navigations = [
   },
 ];
 
-const Header = () => {
+const Header = ({ setSearchTitle }) => {
   const isActive = usePathname();
 
   return (
@@ -54,6 +54,9 @@ const Header = () => {
         </div>
         <div className="bg-[#F4F4F5] flex p-2 rounded-md items-center my-5">
           <input
+            onChange={(e) => {
+              setSearchTitle(e.target.value);
+            }}
             type="text"
             placeholder="Search"
             className="bg-[#F4F4F5] text-base lg:text-lg"

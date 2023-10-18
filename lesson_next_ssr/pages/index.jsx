@@ -3,26 +3,37 @@ import React, { useRef, useEffect, useState } from "react";
 
 import Cards from "../components/CardSection/Cards";
 import CardTop from "../components/CardSection/Section1/CardTop";
+import Layout from "@/components/Layout";
 
 export default function Home({ blogs, page }) {
   const router = useRouter();
   const myRef = useRef(null);
 
+  const [blogList, setBlogList] = useState(blogs);
+
   useEffect(() => {
     myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-  });
+    setBlogList(blogs);
+  }, [blogs]);
+
+  const searchBlog = (searchTitle) => {
+    const findBlogs = blogs.filter((blog) =>
+      blog.title.toLowerCase().includes(searchTitle.toLowerCase())
+    );
+    setBlogList(findBlogs);
+  };
 
   return (
-    <main>
-      <div ref={myRef} className="container mx-auto">
+    <Layout setSearchTitle={searchBlog}>
+      <div className="container mx-auto">
         <section>
           <CardTop />
         </section>
-        <section className="flex flex-col items-center">
+        <section ref={myRef} className="flex flex-col items-center">
           <div className="flex flex-col content-start ">
             <h1 className="my-5 ml-3 font-extrabold text-xl ">All blog post</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-              {blogs.map((blog) => (
+              {blogList.map((blog) => (
                 <Cards key={blog.id} blog={blog} />
               ))}
             </div>
@@ -39,7 +50,7 @@ export default function Home({ blogs, page }) {
         </section>
       </div>
       {/* )} */}
-    </main>
+    </Layout>
   );
 }
 

@@ -4,14 +4,17 @@ import {
   ContactInfo,
   ContactForm,
 } from "@/components/ContactSection";
+import Layout from "@/components/Layout";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto mt-8 lg:max-w-4xl md:max-w-2xl max-w-xs ">
-      <ContactBig />
-      <ContactInfo />
-      <ContactForm />
-    </div>
+    <Layout>
+      <div className="container mx-auto mt-8 lg:max-w-4xl md:max-w-2xl max-w-xs ">
+        <ContactBig />
+        <ContactInfo />
+        <ContactForm />
+      </div>
+    </Layout>
   );
 };
 
