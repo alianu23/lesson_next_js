@@ -25,11 +25,11 @@ export default function Home({ blogs, page }) {
 
   return (
     <Layout setSearchTitle={searchBlog}>
-      <div className="container mx-auto">
+      <div ref={myRef} className="container mx-auto">
         <section>
           <CardTop />
         </section>
-        <section ref={myRef} className="flex flex-col items-center">
+        <section className="flex flex-col items-center">
           <div className="flex flex-col content-start ">
             <h1 className="my-5 ml-3 font-extrabold text-xl ">All blog post</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">

@@ -11,7 +11,8 @@ const AllBlogPost = ({ blogs, page }) => {
 
   useEffect(() => {
     myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-  });
+    setBlogList(blogs);
+  }, [blogs]);
 
   const searchBlog = (searchTitle) => {
     const findBlogs = blogs.filter((blog) =>
@@ -22,12 +23,10 @@ const AllBlogPost = ({ blogs, page }) => {
 
   return (
     <Layout setSearchTitle={searchBlog}>
-      <div ref={myRef} className="container mx-auto">
-        <section className="flex flex-col items-center">
+      <div className="container mx-auto">
+        <section ref={myRef} className="flex flex-col items-center">
           <div className="flex flex-col content-start items-center">
-            <h1 className="my-6 mt-7 font-bold sm:text-center ">
-              All blog post
-            </h1>
+            <h1 className="my-6 mt-7 font-bold sm:text-center ">Blog posts</h1>
             <div className="grid grid-cols-1 sm:mx-20 truncate md:grid-cols-2 lg:grid-cols-3 ">
               {blogList.map((blog) => (
                 <Cards blog={blog} key={blog.id} />
